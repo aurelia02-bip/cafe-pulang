@@ -3,34 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>CAFE PULANG | Rasa yang Membuat Ingin Kembali</title>
-  <meta name="description" content="CAFE PULANG - Tempat menikmati makanan, minuman, dan suasana yang berkelas. Pesan sekarang melalui WhatsApp.">
+  <title>Cafe PULANG - Coffee & Food</title>
 
   <style>
-    /* =========================================================
-       CAFE PULANG
-       Single File Website
-       HTML + CSS + JavaScript
-    ========================================================= */
-
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-    :root {
-      --black: #05070a;
-      --black-soft: #0b0f14;
-      --navy: #0b1b33;
-      --navy-light: #102b4c;
-      --blue: #4d9dcc;
-      --blue-light: #8bc9ed;
-      --white: #f7f8fa;
-      --gray: #aeb7c2;
-      --gold: #d4af62;
-      --gold-light: #efd18a;
-      --border: rgba(212, 175, 98, 0.25);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -38,863 +13,518 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --blue: #063970;
+      --blue-light: #0b5ca8;
+      --gold: #d4af37;
+      --gold-light: #f1d77a;
+      --white: #ffffff;
+      --cream: #f8f9fb;
+      --dark: #17202a;
+      --gray: #6b7280;
+    }
+
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.7;
-      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    /* =========================
-       GLOBAL
-    ========================= */
-
-    .container {
-      width: min(1180px, 90%);
-      margin: auto;
-    }
-
-    .section {
-      padding: 100px 0;
-      position: relative;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title .small-title {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .section-title h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(42px, 5vw, 65px);
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .section-title p {
-      max-width: 600px;
-      margin: 18px auto 0;
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    .gold {
-      color: var(--gold);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 27px;
-      border-radius: 3px;
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: #080a0d;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: .3s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: transparent;
-      color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: #080a0d;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      transition: .4s ease;
-    }
-
-    header.scrolled {
-      background: rgba(5, 7, 10, .92);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
+    /* NAVBAR */
     nav {
-      height: 82px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+      padding: 16px 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-size: 27px;
+      font-weight: bold;
+      color: var(--blue);
+      letter-spacing: 2px;
     }
 
     .logo span {
       color: var(--gold);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
+    nav ul {
       list-style: none;
+      display: flex;
+      gap: 28px;
     }
 
-    .nav-links a {
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #d7dce2;
-      transition: .3s;
+    nav ul li a {
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      transition: 0.3s;
     }
 
-    .nav-links a:hover {
+    nav ul li a:hover {
       color: var(--gold);
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 27px;
+    .cart-button {
+      background: var(--blue);
       color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 25px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    .cart-button:hover {
+      background: var(--gold);
+      color: var(--blue);
+    }
 
+    /* HERO */
     .hero {
-      min-height: 100vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
-      position: relative;
+      padding: 70px 7%;
       background:
-        radial-gradient(circle at 80% 20%, rgba(42, 113, 160, .25), transparent 35%),
-        radial-gradient(circle at 20% 80%, rgba(15, 44, 78, .35), transparent 35%),
-        linear-gradient(120deg, #030507 0%, #081322 55%, #05070a 100%);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: linear-gradient(to bottom, black, transparent);
+        linear-gradient(rgba(6,57,112,0.90), rgba(6,57,112,0.90)),
+        radial-gradient(circle at center, #1767ad, #063970);
+      color: white;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 750px;
+      max-width: 700px;
     }
 
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-bottom: 22px;
-    }
-
-    .hero-label::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
+    .hero small {
+      color: var(--gold-light);
+      font-size: 17px;
+      letter-spacing: 3px;
+      font-weight: bold;
     }
 
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(65px, 10vw, 125px);
-      font-weight: 500;
-      line-height: .82;
-      letter-spacing: -3px;
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 1;
+      margin: 18px 0;
+      letter-spacing: 5px;
     }
 
     .hero h1 span {
       color: var(--gold);
     }
 
-    .hero-description {
-      max-width: 570px;
-      margin: 30px 0;
-      color: #b9c3ce;
-      font-size: 15px;
+    .hero p {
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 600px;
+      color: #e9f1f8;
     }
 
     .hero-buttons {
       display: flex;
+      gap: 15px;
+      margin-top: 30px;
       flex-wrap: wrap;
-      gap: 13px;
     }
 
-    .hero-decoration {
-      position: absolute;
-      right: 7%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 370px;
-      height: 370px;
-      border: 1px solid rgba(212,175,98,.25);
-      border-radius: 50%;
-      box-shadow:
-        0 0 100px rgba(56, 135, 185, .12),
-        inset 0 0 80px rgba(212,175,98,.04);
+    .btn {
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
     }
 
-    .hero-decoration::before,
-    .hero-decoration::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      inset: 35px;
-      border: 1px solid rgba(139,201,237,.16);
+    .btn-gold {
+      background: var(--gold);
+      color: var(--blue);
     }
 
-    .hero-decoration::after {
-      inset: 80px;
-      border-color: rgba(212,175,98,.18);
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
     }
 
-    .hero-center {
-      position: absolute;
-      inset: 0;
+    .btn-white {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-white:hover {
+      background: white;
+      color: var(--blue);
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      color: var(--blue);
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    /* MENU */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(6,57,112,0.09);
+      transition: 0.3s;
+      border: 1px solid #e8edf3;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(6,57,112,0.16);
+    }
+
+    .product-image {
+      height: 170px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-    }
-
-    .hero-center span {
-      font-family: 'Cormorant Garamond', serif;
       font-size: 70px;
+      background: linear-gradient(135deg, #eaf3fb, #ffffff);
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 42px;
+    }
+
+    .price {
       color: var(--gold);
-      opacity: .8;
+      font-size: 19px;
+      font-weight: bold;
+      margin: 15px 0;
     }
 
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #77818d;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .add-cart {
+      width: 100%;
+      border: none;
+      background: var(--blue);
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
+    .add-cart:hover {
+      background: var(--gold);
+      color: var(--blue);
+    }
 
+    /* ABOUT */
     .about {
-      background: var(--black-soft);
+      background: white;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      gap: 50px;
       align-items: center;
     }
 
-    .about-visual {
-      height: 500px;
-      position: relative;
-      background:
-        linear-gradient(145deg, rgba(13,43,72,.9), rgba(4,8,13,.95));
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .about-visual::before {
-      content: "PULANG";
-      position: absolute;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 110px;
-      color: rgba(255,255,255,.025);
-      transform: rotate(-90deg);
-      top: 160px;
-      left: -85px;
-      letter-spacing: 10px;
-    }
-
-    .about-frame {
-      position: absolute;
-      inset: 35px;
-      border: 1px solid rgba(212,175,98,.35);
-    }
-
-    .about-frame-content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .about-box {
+      background: var(--blue);
+      color: white;
+      padding: 45px;
+      border-radius: 25px;
       text-align: center;
     }
 
-    .about-frame-content div {
-      max-width: 260px;
-    }
-
-    .about-frame-content .symbol {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 100px;
+    .about-box .big-logo {
+      font-size: 65px;
+      font-weight: bold;
       color: var(--gold);
-      line-height: 1;
-    }
-
-    .about-frame-content p {
-      color: var(--gray);
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .about-text .eyebrow {
-      color: var(--gold);
-      letter-spacing: 3px;
-      font-size: 11px;
-      text-transform: uppercase;
+      letter-spacing: 5px;
     }
 
     .about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 55px;
-      font-weight: 500;
-      line-height: 1;
-      margin: 15px 0 25px;
+      color: var(--blue);
+      font-size: 38px;
+      margin-bottom: 18px;
     }
 
     .about-text p {
       color: var(--gray);
-      font-size: 14px;
-      margin-bottom: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
     }
 
-    .signature {
-      margin-top: 30px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      color: var(--gold);
-    }
-
-    /* =========================
-       MENU
-    ========================= */
-
-    .menu-section {
-      background:
-        radial-gradient(circle at 90% 50%, rgba(18,55,91,.25), transparent 35%),
-        var(--black);
-    }
-
-    .menu-tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 40px;
-    }
-
-    .tab-btn {
-      padding: 10px 20px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: transparent;
-      color: var(--gray);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: .3s;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--gold);
-      color: #080a0d;
-      border-color: var(--gold);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .menu-card {
-      background: linear-gradient(145deg, #0d1219, #080b10);
-      border: 1px solid rgba(255,255,255,.07);
-      padding: 27px;
-      transition: .35s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-7px);
-      border-color: var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .menu-number {
-      color: rgba(212,175,98,.5);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-    }
-
-    .menu-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 600;
-      margin: 10px 0 5px;
-    }
-
-    .menu-card p {
-      color: #89939e;
-      font-size: 12px;
-      min-height: 45px;
-    }
-
-    .menu-price {
-      margin-top: 18px;
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience {
-      background: linear-gradient(120deg, #07111e, #05070a);
-      border-top: 1px solid rgba(255,255,255,.05);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .experience-grid {
+    /* FEATURES */
+    .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
-    .experience-card {
-      padding: 45px 30px;
+    .feature {
       text-align: center;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.015);
-      transition: .3s;
+      background: white;
+      padding: 35px 20px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
 
-    .experience-card:hover {
-      border-color: var(--border);
-      transform: translateY(-5px);
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
     }
 
-    .experience-icon {
-      font-size: 32px;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .experience-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
+    .feature h3 {
+      color: var(--blue);
       margin-bottom: 10px;
     }
 
-    .experience-card p {
+    .feature p {
       color: var(--gray);
-      font-size: 13px;
+      line-height: 1.5;
     }
 
-    /* =========================
-       CTA
-    ========================= */
-
+    /* CTA */
     .cta {
-      padding: 110px 0;
+      background: var(--blue);
+      color: white;
       text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(20,61,97,.45), transparent 55%),
-        var(--black);
     }
 
     .cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(50px, 7vw, 85px);
-      font-weight: 500;
-      line-height: .95;
-      max-width: 800px;
-      margin: auto;
+      font-size: 38px;
+      margin-bottom: 15px;
     }
 
     .cta p {
-      color: var(--gray);
-      max-width: 550px;
-      margin: 25px auto 30px;
-      font-size: 14px;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      background: #070a0f;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-info {
-      padding: 35px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.015);
-    }
-
-    .contact-info h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
+      color: #dbe8f4;
       margin-bottom: 25px;
     }
 
-    .contact-item {
-      display: flex;
-      gap: 15px;
-      margin: 20px 0;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+    /* FOOTER */
+    footer {
+      background: #03284f;
+      color: white;
+      padding: 45px 7% 25px;
     }
 
-    .contact-item .icon {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    footer h3 {
       color: var(--gold);
-      font-size: 18px;
-      width: 25px;
+      margin-bottom: 15px;
     }
 
-    .contact-item small {
-      color: #737e89;
-      display: block;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+    footer p,
+    footer a {
+      color: #d5e0eb;
+      line-height: 1.8;
+      text-decoration: none;
     }
 
-    .contact-item p {
-      color: #c6ccd2;
-      font-size: 13px;
-      margin-top: 3px;
+    footer a:hover {
+      color: var(--gold);
     }
 
-    .contact-map {
-      min-height: 380px;
-      border: 1px solid rgba(255,255,255,.08);
-      background:
-        linear-gradient(rgba(7,15,26,.82), rgba(7,15,26,.9)),
-        repeating-linear-gradient(
-          45deg,
-          #102338,
-          #102338 10px,
-          #0c1c2e 10px,
-          #0c1c2e 20px
-        );
-      display: flex;
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 20px;
+      text-align: center;
+      color: #b8c7d6;
+    }
+
+    /* CART */
+    .cart-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 2000;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 30px;
+      padding: 20px;
     }
 
-    .map-content span {
-      font-size: 45px;
-      color: var(--gold);
+    .cart-box {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: 25px;
     }
 
-    .map-content h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 35px;
-      margin: 10px 0;
-    }
-
-    .map-content p {
-      color: var(--gray);
-      font-size: 13px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #030507;
-      padding: 45px 0 25px;
-      border-top: 1px solid rgba(255,255,255,.07);
-    }
-
-    .footer-top {
+    .cart-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 30px;
-      padding-bottom: 35px;
+      margin-bottom: 20px;
     }
 
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 35px;
-      letter-spacing: 3px;
+    .cart-header h2 {
+      color: var(--blue);
     }
 
-    .footer-logo span {
-      color: var(--gold);
+    .close-cart {
+      border: none;
+      background: #eee;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
     }
 
-    .socials {
+    .cart-item {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 13px 0;
       gap: 10px;
     }
 
-    .socials a {
-      width: 38px;
-      height: 38px;
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-info strong {
+      color: var(--blue);
+    }
+
+    .cart-item-info small {
+      display: block;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .qty {
       display: flex;
       align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,.1);
-      color: var(--gray);
-      font-size: 12px;
-      transition: .3s;
+      gap: 8px;
     }
 
-    .socials a:hover {
-      color: var(--gold);
-      border-color: var(--gold);
+    .qty button {
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      cursor: pointer;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.06);
-      padding-top: 20px;
+    .cart-total {
       display: flex;
       justify-content: space-between;
-      color: #626b75;
-      font-size: 10px;
-      letter-spacing: 1px;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--blue);
+      padding: 20px 0;
     }
 
-    /* =========================
-       WHATSAPP FLOATING
-    ========================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 27px;
-      z-index: 998;
-      box-shadow: 0 10px 30px rgba(37,211,102,.25);
-      transition: .3s;
+    .checkout {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: var(--gold);
+      color: var(--blue);
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
     }
 
-    .whatsapp:hover {
-      transform: scale(1.08);
+    .empty-cart {
+      text-align: center;
+      color: var(--gray);
+      padding: 30px 0;
     }
 
-    .whatsapp-tooltip {
-      position: absolute;
-      right: 70px;
-      white-space: nowrap;
-      background: #111820;
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 8px 13px;
-      border-radius: 4px;
-      font-size: 10px;
-      color: #dfe5ea;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateX(10px);
-      transition: .3s;
-    }
-
-    .whatsapp:hover .whatsapp-tooltip {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: .8s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .nav-links {
-        position: absolute;
-        top: 82px;
-        left: 0;
-        width: 100%;
-        background: rgba(5,7,10,.97);
-        backdrop-filter: blur(15px);
-        flex-direction: column;
-        padding: 25px;
-        gap: 22px;
-        transform: translateY(-150%);
-        opacity: 0;
-        transition: .4s;
-        border-bottom: 1px solid rgba(255,255,255,.08);
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 14px 5%;
       }
 
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero-decoration {
-        opacity: .25;
-        right: -120px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .section {
-        padding: 75px 0;
+      nav ul {
+        display: none;
       }
 
       .hero {
-        min-height: 850px;
+        min-height: 80vh;
+        padding: 60px 6%;
       }
 
-      .hero h1 {
-        font-size: 72px;
+      section {
+        padding: 60px 6%;
       }
 
-      .hero-description {
-        font-size: 13px;
-      }
-
-      .hero-decoration {
-        width: 300px;
-        height: 300px;
-        right: -130px;
-        top: 35%;
-      }
-
-      .about-visual {
-        height: 380px;
-      }
-
-      .about-text h2 {
-        font-size: 45px;
-      }
-
-      .menu-grid {
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-top,
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
+      .features {
+        grid-template-columns: 1fr;
       }
 
-      .contact-info {
-        padding: 25px;
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .cta {
-        padding: 80px 0;
+      .hero h1 {
+        font-size: 55px;
       }
     }
   </style>
@@ -902,67 +532,441 @@
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================== -->
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">PULANG<span>.</span></div>
 
-  <header id="header">
-    <div class="container">
-      <nav>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
 
-        <a href="#home" class="logo">
-          CAFE <span>PULANG</span>
-        </a>
-
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#experience">Suasana</a></li>
-          <li><a href="#contact">Kontak</a></li>
-          <li>
-            <a
-              href="https://wa.me/628123456780?text=Halo%20CAFE%20PULANG%2C%20saya%20ingin%20memesan."
-              target="_blank"
-              class="btn"
-            >
-              Pesan Sekarang
-            </a>
-          </li>
-        </ul>
-
-        <div class="menu-toggle" id="menuToggle">☰</div>
-
-      </nav>
-    </div>
-  </header>
+    <button class="cart-button" onclick="openCart()">
+      🛒 Keranjang (<span id="cartCount">0</span>)
+    </button>
+  </nav>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
-
+  <!-- HERO -->
   <section class="hero" id="home">
+    <div class="hero-content">
 
-    <div class="container">
+      <small>WELCOME TO</small>
 
-      <div class="hero-content reveal">
+      <h1>CAFE <span>PULANG</span></h1>
 
-        <div class="hero-label">
-          Welcome to CAFE PULANG
+      <p>
+        Tempat untuk menikmati kopi, makanan lezat,
+        dan cerita yang ingin kamu bawa pulang.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-gold">Lihat Menu</a>
+        <a href="#tentang" class="btn btn-white">Tentang Kami</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MENU -->
+  <section id="menu">
+
+    <div class="section-title">
+      <small>OUR MENU</small>
+      <h2>Menu Favorit PULANG</h2>
+      <p>Pilihan kopi dan makanan untuk menemani harimu.</p>
+    </div>
+
+    <div class="products">
+
+      <div class="product">
+        <div class="product-image">☕</div>
+        <div class="product-content">
+          <h3>Kopi Susu PULANG</h3>
+          <p>Kopi susu creamy dengan cita rasa khas PULANG.</p>
+          <div class="price">Rp18.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Kopi Susu PULANG',18000)">
+            + Tambah
+          </button>
         </div>
+      </div>
 
-        <h1>
-          Rasa yang<br>
-          membuat <span>pulang.</span>
-        </h1>
+      <div class="product">
+        <div class="product-image">🧊</div>
+        <div class="product-content">
+          <h3>Iced Americano</h3>
+          <p>Espresso dengan air dan es yang menyegarkan.</p>
+          <div class="price">Rp15.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Iced Americano',15000)">
+            + Tambah
+          </button>
+        </div>
+      </div>
 
-        <p class="hero-description">
-          Sebuah tempat untuk menikmati hidangan pilihan,
-          berbagi cerita, dan menemukan kembali arti dari
-          sebuah perjalanan pulang.
+      <div class="product">
+        <div class="product-image">🍵</div>
+        <div class="product-content">
+          <h3>Matcha Latte</h3>
+          <p>Matcha lembut dengan susu creamy.</p>
+          <div class="price">Rp20.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Matcha Latte',20000)">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🍫</div>
+        <div class="product-content">
+          <h3>Chocolate Latte</h3>
+          <p>Minuman cokelat creamy untuk teman santai.</p>
+          <div class="price">Rp20.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Chocolate Latte',20000)">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🥐</div>
+        <div class="product-content">
+          <h3>Croffle</h3>
+          <p>Croffle renyah dengan topping manis.</p>
+          <div class="price">Rp18.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Croffle',18000)">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🍚</div>
+        <div class="product-content">
+          <h3>Nasi Goreng PULANG</h3>
+          <p>Nasi goreng khas cafe dengan bumbu spesial.</p>
+          <div class="price">Rp25.000</div>
+          <button class="add-cart"
+            onclick="addToCart('Nasi Goreng PULANG',25000)">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TENTANG -->
+  <section class="about" id="tentang">
+
+    <div class="about-grid">
+
+      <div class="about-box">
+        <div class="big-logo">PULANG</div>
+        <p>
+          Coffee • Food • Stories
+        </p>
+      </div>
+
+      <div class="about-text">
+        <h2>Tentang Cafe PULANG</h2>
+
+        <p>
+          PULANG adalah tempat nongkrong yang dirancang
+          untuk menjadi ruang nyaman setelah menjalani hari.
         </p>
 
-        <div class="hero-buttons">
+        <p>
+          Nikmati kopi pilihan, makanan favorit,
+          suasana nyaman, dan waktu berkualitas
+          bersama teman maupun keluarga.
+        </p>
 
-          <a hr
+        <p>
+          <strong style="color:#063970;">
+            "Karena setiap perjalanan punya tempat untuk pulang."
+          </strong>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section>
+
+    <div class="section-title">
+      <small>WHY PULANG?</small>
+      <h2>Lebih dari Sekadar Cafe</h2>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">☕</div>
+        <h3>Kopi Berkualitas</h3>
+        <p>
+          Kopi dibuat dengan perhatian untuk menghasilkan
+          rasa yang nikmat.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏠</div>
+        <h3>Tempat Nyaman</h3>
+        <p>
+          Suasana yang cocok untuk santai, ngobrol,
+          belajar, maupun bekerja.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">✨</div>
+        <h3>Pengalaman Berkesan</h3>
+        <p>
+          Kami ingin setiap kunjungan meninggalkan
+          cerita yang menyenangkan.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta" id="kontak">
+
+    <h2>Yuk, Mampir ke PULANG!</h2>
+
+    <p>
+      Nikmati kopi dan makanan favoritmu hari ini.
+    </p>
+
+    <a
+      href="https://wa.me/6281234567890"
+      target="_blank"
+      class="btn btn-gold">
+      Pesan via WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>CAFE PULANG</h3>
+        <p>
+          Coffee, food, and stories.
+          Tempat nyaman untuk menikmati waktu.
+        </p>
+      </div>
+
+      <div>
+        <h3>Menu</h3>
+        <p><a href="#menu">Kopi</a></p>
+        <p><a href="#menu">Non-Kopi</a></p>
+        <p><a href="#menu">Food</a></p>
+      </div>
+
+      <div>
+        <h3>Kontak</h3>
+        <p>📍 Jl. Contoh No. 123</p>
+        <p>📱 0812-3456-7890</p>
+        <p>📸 @cafepulang</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Cafe PULANG. All Rights Reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- CART MODAL -->
+  <div class="cart-modal" id="cartModal">
+
+    <div class="cart-box">
+
+      <div class="cart-header">
+        <h2>🛒 Keranjang</h2>
+        <button class="close-cart" onclick="closeCart()">×</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">Rp0</span>
+      </div>
+
+      <button class="checkout" onclick="checkoutWhatsApp()">
+        Pesan Sekarang via WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    let cart = [];
+
+    function formatRupiah(number) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(number);
+    }
+
+    function addToCart(name, price) {
+
+      const existing = cart.find(item => item.name === name);
+
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          qty: 1
+        });
+      }
+
+      updateCart();
+
+      alert(name + " berhasil ditambahkan ke keranjang!");
+    }
+
+    function updateCart() {
+
+      const cartItems = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+      const cartTotal = document.getElementById("cartTotal");
+
+      cartItems.innerHTML = "";
+
+      let total = 0;
+      let count = 0;
+
+      if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            Keranjang masih kosong.
+          </div>
+        `;
+
+      } else {
+
+        cart.forEach((item, index) => {
+
+          total += item.price * item.qty;
+          count += item.qty;
+
+          cartItems.innerHTML += `
+            <div class="cart-item">
+
+              <div class="cart-item-info">
+                <strong>${item.name}</strong>
+                <small>${formatRupiah(item.price)}</small>
+              </div>
+
+              <div class="qty">
+                <button onclick="decreaseQty(${index})">−</button>
+                <span>${item.qty}</span>
+                <button onclick="increaseQty(${index})">+</button>
+              </div>
+
+            </div>
+          `;
+
+        });
+      }
+
+      cartCount.innerText = count;
+      cartTotal.innerText = formatRupiah(total);
+    }
+
+    function increaseQty(index) {
+      cart[index].qty++;
+      updateCart();
+    }
+
+    function decreaseQty(index) {
+
+      cart[index].qty--;
+
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById("cartModal").style.display = "flex";
+      updateCart();
+    }
+
+    function closeCart() {
+      document.getElementById("cartModal").style.display = "none";
+    }
+
+    function checkoutWhatsApp() {
+
+      if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+
+      let message = "Halo Cafe PULANG, saya ingin memesan:%0A%0A";
+      let total = 0;
+
+      cart.forEach(item => {
+
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+
+        message +=
+          "• " + item.name +
+          " x" + item.qty +
+          " = " + formatRupiah(subtotal) +
+          "%0A";
+
+      });
+
+      message +=
+        "%0ATotal: " + formatRupiah(total) +
+        "%0A%0ATerima kasih.";
+
+      const phone = "6281234567890";
+
+      window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+      );
+    }
+
+    updateCart();
+
+  </script>
+
+</body>
+</html>
